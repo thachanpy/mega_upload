@@ -32,7 +32,6 @@ if folder is None:
     folder = m.find(get_mega_folder())
 
 for file in os.scandir(get_backup_folder()):
-    print(file.path)
     if os.path.isfile(file.path) and file.name.endswith('.tar'):
         print("Uploading {} to Mega".format(file.path))
         m.upload(file.path, folder[0])
